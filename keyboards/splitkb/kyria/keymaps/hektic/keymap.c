@@ -33,7 +33,8 @@ enum layers {
 
 #define CTL_ESC  MT(MOD_LCTL, KC_ESC)
 #define OSM_CA   OSM(MOD_LCTL|MOD_LALT)
-#define MAC_PS   LGUI(LCTL(LSFT(KC_4)))
+#define MAC_PSR  LGUI(LCTL(LSFT(KC_4)))
+#define MAC_PS   LGUI(LSFT(KC_4))
 #define ENT_ADJ  LT(ADJUST, KC_ENT)
 #define CTLA     LCTL(KC_A)
 
@@ -56,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TAB,      KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_MINS,
      CTL_ESC,      KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                                        KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOTE,
      KC_LSFT,      KC_Z,    KC_X,    KC_C,    KC_V,    KC_B, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,   KC_GRV,
-                         KC_LALT, KC_LGUI,     SYM, KC_LSFT,  KC_SPC, ENT_ADJ, KC_BSPC,     NAV, KC_RGUI,  KC_DEL
+                                  KC_LALT, KC_LGUI,     SYM, KC_LSFT,  KC_SPC, ENT_ADJ, KC_BSPC,     NAV, KC_RGUI,  KC_DEL
     ),
 
 /*
@@ -76,42 +77,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_TAB ,      KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN,  KC_MINS,
      CTL_ESC,      KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_O, KC_QUOTE,
      KC_LSFT,      KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,   KC_GRV,
-                         KC_LALT, KC_LGUI,     SYM, KC_LSFT,  KC_SPC, ENT_ADJ, KC_BSPC,     NAV, KC_RGUI,  KC_DEL
+                                  KC_LALT, KC_LGUI,     SYM, KC_LSFT,  KC_SPC, ENT_ADJ, KC_BSPC,     NAV, KC_RGUI,  KC_DEL
     ),
 
     [_NAV] = LAYOUT(
          KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                                       KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
-        MAC_PS, _______, _______, _______, _______, _______,                                     KC_LEFT, KC_DOWN,   KC_UP, KC_RIGHT, _______, _______,
-        OSM_CA, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP,   KC_END, _______, _______,
-                         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+       _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                                     KC_LEFT, KC_DOWN,   KC_UP, KC_RIGHT, _______, _______,
+       _______, _______, _______,  OSM_CA, _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP,   KC_END, _______, _______,
+                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
     [_SYM] = LAYOUT(
-       KC_TILD, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                                     KC_CIRC, KC_AMPR, KC_ASTR,  KC_LPRN, KC_RPRN, KC_PIPE,
-        KC_GRV,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                                       KC_6 ,   KC_7 ,   KC_8 ,    KC_9 ,   KC_0 , KC_BSLS,
-          CTLA, _______, _______, _______, KC_LCBR, KC_LBRC, _______, _______, _______, _______, KC_RBRC, KC_RCBR, KC_PEQL,  KC_PLUS, KC_SLSH, _______,
-                         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+       KC_TILD, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                                     KC_CIRC, KC_AMPR, KC_ASTR,  KC_LPRN, KC_RPRN,  KC_EQL,
+          CTLA,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                                        KC_6,    KC_7,    KC_8,     KC_9,    KC_0, KC_PLUS,
+       KC_PIPE, KC_BSLS, KC_COLN, KC_SCLN, KC_LBRC, KC_LCBR, _______, _______, _______, _______, KC_RCBR, KC_RBRC, KC_COMM,   KC_DOT, KC_SLSH, KC_UNDS,
+                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
-/*
- * Adjust Layer: Default layer settings, RGB
- *
- * ,-------------------------------------------.                              ,-------------------------------------------.
- * |        |Qwerty|      |      |      |      |                              |      |      |      |      |      |  Mute  |
- * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        |      |      |      |      |      |                              | TOG  | SAI  | HUI  | VAI  | MOD  |  Vol+  |
- * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |      |      |Colmak|      |      |      |      |  |      |      |      | SAD  | HUD  | VAD  | RMOD |  Vol-  |
- * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        |      |      |      |      |      |  |      |      |      |      |      |
- *                        |      |      |      |      |      |  |      |      |      |      |      |
- *                        `----------------------------------'  `----------------------------------'
- */
     [_ADJUST] = LAYOUT(
-      _______,  QWERTY, _______, _______, _______, _______,                                    _______, _______, _______, _______,  _______, KC_MUTE,
-      _______, _______, _______, _______, _______, _______,                                    RGB_TOG, RGB_SAI, RGB_HUI, RGB_VAI,  RGB_MOD, KC_VOLU,
-      _______, _______, _______, COLEMAK, _______, _______,_______, _______, _______, _______, _______, RGB_SAD, RGB_HUD, RGB_VAD, RGB_RMOD, KC_VOLD,
-                        _______, _______, _______,_______, _______, _______, _______, _______, _______, _______
+       QWERTY, _______, _______, _______, _______, MAC_PSR,                                    _______, _______, _______, _______,  _______, KC_MUTE,
+      COLEMAK, _______, _______, _______, _______,  MAC_PS,                                    RGB_TOG, RGB_SAI, RGB_HUI, RGB_VAI,  RGB_MOD, KC_VOLU,
+      _______, _______, _______, _______, _______, _______,_______, _______, _______, _______, _______, RGB_SAD, RGB_HUD, RGB_VAD, RGB_RMOD, KC_VOLD,
+                                 _______, _______, _______,_______, _______, _______, _______, _______, _______, _______
     ),
 };
 
