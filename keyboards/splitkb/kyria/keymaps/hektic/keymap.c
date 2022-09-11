@@ -90,14 +90,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SYM] = LAYOUT(
        KC_TILD, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                                     KC_CIRC, KC_AMPR, KC_ASTR,  KC_LPRN, KC_RPRN,  KC_EQL,
           CTLA,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                                        KC_6,    KC_7,    KC_8,     KC_9,    KC_0, KC_PLUS,
-       KC_PIPE, KC_BSLS, KC_COLN, KC_SCLN, KC_LBRC, KC_LCBR, _______, _______, _______, _______, KC_RCBR, KC_RBRC, KC_COMM,   KC_DOT, KC_SLSH, KC_UNDS,
+       KC_PIPE, KC_BSLS, KC_COLN, KC_SCLN, KC_LCBR, KC_LBRC, _______, _______, _______, _______, KC_RBRC, KC_RCBR, KC_COMM,   KC_DOT, KC_SLSH, KC_UNDS,
                                   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
     [_ADJUST] = LAYOUT(
        QWERTY, _______, _______, _______, _______, MAC_PSR,                                    _______, _______, _______, _______,  _______, KC_MUTE,
       COLEMAK, _______, _______, _______, _______,  MAC_PS,                                    RGB_TOG, RGB_SAI, RGB_HUI, RGB_VAI,  RGB_MOD, KC_VOLU,
-      _______, _______, _______, _______, _______, _______,_______, _______, _______, _______, _______, RGB_SAD, RGB_HUD, RGB_VAD, RGB_RMOD, KC_VOLD,
+      _______, CG_TOGG, _______, _______, _______, _______,_______, _______, _______, _______, _______, RGB_SAD, RGB_HUD, RGB_VAD, RGB_RMOD, KC_VOLD,
                                  _______, _______, _______,_______, _______, _______, _______, _______, _______, _______
     ),
 };
