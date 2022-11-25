@@ -129,7 +129,7 @@ bool oled_task_user(void) {
         oled_write_P(PSTR("Layer: "), false);
         switch (get_highest_layer(layer_state|default_layer_state)) {
             case _QWERTY:
-                oled_write_P(PSTR("QWERTY\n"), false);
+                oled_write_P(PSTR("Qwerty\n"), false);
                 break;
             case _COLEMAK_DH:
                 oled_write_P(PSTR("Colemak-DH\n"), false);
@@ -144,7 +144,7 @@ bool oled_task_user(void) {
                 oled_write_P(PSTR("Adjust\n"), false);
                 break;
             default:
-                oled_write_P(PSTR("Undefined\n"), false);
+                oled_write_P(PSTR("Unk\n"), false);
         }
 
         // Write host Keyboard LED Status to OLEDs
