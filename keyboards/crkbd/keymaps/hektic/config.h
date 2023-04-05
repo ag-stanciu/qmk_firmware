@@ -31,6 +31,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define TAPPING_FORCE_HOLD
 #define TAPPING_TERM 200
 #define IGNORE_MOD_TAP_INTERRUPT
+#define PERMISSIVE_HOLD
 
 // caps word
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
