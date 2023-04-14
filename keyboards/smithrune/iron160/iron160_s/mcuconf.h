@@ -1,5 +1,5 @@
 /*
-Copyright 2020 Stefan Sundin "4pplet" <4pplet@protonmail.com>
+Copyright 2022 Gondolindrim
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -14,4 +14,10 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#include "rev_a.h"
+
+#pragma once
+
+#include_next <mcuconf.h>
+
+#undef STM32_PWM_USE_TIM3
+#define STM32_PWM_USE_TIM3 TRUE
