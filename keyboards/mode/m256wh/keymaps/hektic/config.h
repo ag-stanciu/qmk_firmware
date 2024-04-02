@@ -1,0 +1,3 @@
+#define TAPPING_TERM 200
+// caps word
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
